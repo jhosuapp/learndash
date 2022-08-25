@@ -47,4 +47,18 @@
         opacity: 1;
         pointer-events: all;
     }
+    &.validate-all-questions{
+        opacity: 1;
+        pointer-events: all;
+        #wrong{
+            display: none;
+        }
+        #check{
+            display: block;
+        }
+        .questions-submit__button--purple,
+        #dinamicText{
+            display: none;
+        }
+    }
 }

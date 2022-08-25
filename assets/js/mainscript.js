@@ -33,14 +33,23 @@ getButtonSubmit.addEventListener('click', ()=>{
 
     let getAttributeValidate = getButtonSubmit.getAttribute('data-validate');
     let getAllContainersActive = document.querySelectorAll('.questions__block');
+    let getAllValidationsOfQuestions = document.querySelectorAll('.validation-questions');
 
+    if(getAllValidationsOfQuestions.length == 9){
 
+        getModal.classList.add('validate-all-questions');
+        let getDinamitextResults = document.querySelector('#dinamicTextResults');
+        getDinamitextResults.textContent = "Has obtenido un total de 10/10 respuestas correctas"; 
+        document.querySelector('#modalTextDinamic').textContent = "¡Has respondido de manera correcta!"
+
+    }
 
     if(getAttributeValidate == "true"){
 
         let getContainerActive = document.querySelector('.questions__block.active');
         getContainerActive.classList.remove('active');
         getContainerActive.nextElementSibling.classList.add('active');
+        getContainerActive.nextElementSibling.classList.add('validation-questions');
 
     }else{
 

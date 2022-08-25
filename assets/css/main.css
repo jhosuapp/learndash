@@ -261,5 +261,19 @@ html {
   opacity: 1;
   pointer-events: all;
 }
+.modal.validate-all-questions {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal.validate-all-questions #wrong {
+  display: none;
+}
+.modal.validate-all-questions #check {
+  display: block;
+}
+.modal.validate-all-questions .questions-submit__button--purple,
+.modal.validate-all-questions #dinamicText {
+  display: none;
+}
 
 /*# sourceMappingURL=main.css.map */
