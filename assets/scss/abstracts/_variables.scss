@@ -1,0 +1,32 @@
+//PALETA DE COLORES
+
+$palette : (
+    'primario': #fff,
+    'secundario': #000,
+    'morado': #9873D0
+);   
+
+//FONT SIZE
+
+$font : (
+
+);
+
+$font-mobile: (
+
+);
+
+//BREAKPOINTS
+
+$breakpoints: (
+    'desktop': 1800px,
+    'portatil': 1440px,
+    'portatil-pequeño': 1100px,
+    'ipad-grande': 992px,
+    'ipad-pequeña': 768px,
+    'celular': 576px
+);
+
+//OTROS
+
+$transition-duration: .3s;

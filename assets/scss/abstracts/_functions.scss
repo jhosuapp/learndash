@@ -1,0 +1,24 @@
+@function color($name){
+    @return(map-get($map: $palette , $key: $name));
+}
+
+@function font($name){
+    @return (map-get($map: $font, $key: $name));
+}
+
+@function font-mobile($name){
+    @return (map-get($map: $font-mobile, $key: $name));
+}
+//COLOR LIGHTEN
+@function colorLighten($name, $amount){
+    @return lighten(color($name), $amount);
+}
+//COLOR DARKEN
+@function colorDarken($name, $amount){
+    @return darken(color($name), $amount);
+}
+//BREAKPOINTS
+
+@function breakpoint($name){
+    @return (map-get($map: $breakpoints, $key: $name));
+}

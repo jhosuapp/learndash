@@ -1,0 +1,167 @@
+.questions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &__container{
+        width: 90%;
+        max-width: 1500px;
+        height: 90vh;
+        max-height: 700px;
+        overflow: auto;
+        border-radius: 8px;
+        box-shadow: -2px 3px 44px -12px rgb(0 0 0 / 40%);
+        padding: 50px 40px;
+        &::-webkit-scrollbar-thumb {
+            background: color('morado');
+        }
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            background: rgba(255,255,255,0.8);
+        }
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 5px;
+        }
+        &__principal{
+            display: flex;
+        }
+    }
+    &__title{
+        font-size: 35px;
+        font-weight: 600;
+        color: color('secundario');
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+    }
+    &__background{
+        position: absolute;
+        left: 0;
+        top: -200px;
+        z-index: -1;
+        &--two{
+            left: unset;
+            right: -300px;
+            max-width: 800px;
+            transform: rotate(180deg);
+            .questions__background__image{
+                width: 100%;
+            }
+        }
+    }
+    &__block{
+        width: 50%;
+        display: none;
+        &.active{
+            display: block;
+        }
+        &__item{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+        &__number{
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            color: color('primario');
+            font-weight: 600;
+            background-color: color('secundario');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+        }
+        &__subtitle{
+            font-size: 24px;
+            color: color('secundario');
+            font-weight: 600;
+            position: relative;
+            width: 90%;
+        }
+    }
+    &-options{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 30px;
+        max-width: 100%;
+        &__response{
+            margin-left: 30px;
+            padding: 20px 40px;
+            background-color: color('morado');
+            width: fit-content;
+            border-radius: 5px;
+            color: color('primario');
+            border: 2px solid color('morado');
+            font-size: 18px;
+            transition: .3s all ease;
+            cursor: pointer;
+            &:hover{
+                background: transparent;
+                color: color('morado');
+            }
+            &.active{
+                background: transparent;
+                color: color('morado');
+            }
+        }
+    }
+    &-submit{
+        width: 50%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        &__button{
+            background-color: color('secundario');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            padding: 20px 40px;
+            border-radius: 10px;
+            color: color('primario');
+            font-size: 18px;
+            cursor: pointer;
+            transition: .3s all ease;
+            &:hover{
+                background-color: color('morado');
+            }
+            &--purple{
+                margin-top: 30px;
+                text-decoration: none;
+                font-size: 20px;
+            }
+            &.active{
+                opacity: .7;
+                pointer-events: none;
+            }
+        }   
+    }
+}
+
+@media(max-width: breakpoint('ipad-grande')){
+    .questions{
+        &__container__principal{
+            flex-direction: column;
+            gap: 40px;
+        }
+        &__block{
+            width: 100%;
+        }
+        &-submit{
+            width: 100%;
+        }
+        &-options{
+            &__response{
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    }
+}
