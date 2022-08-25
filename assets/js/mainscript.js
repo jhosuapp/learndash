@@ -59,13 +59,35 @@ getButtonSubmit.addEventListener('click', ()=>{
             if(data.classList.contains('active')){
                 let getDinamitextResults = document.querySelector('#dinamicTextResults');
                 getDinamitextResults.textContent = "Has obtenido un total de " + indice + "/10 respuestas correctas"; 
+                localStorage.setItem('preguntas-bien', indice);
             }
 
         });
+
+
+        //VALIDACION INTENTOS
+        let numberIntentos = localStorage.getItem('intento-1');
+        let getNumberIntentos = document.querySelector('#dinamicText');
+
+        if(numberIntentos){
+            setTimeout(()=>{
+                localStorage.setItem('intento-2', 'intento-2');
+            },500);
+            getNumberIntentos.textContent = "Te queda 1 intento";
+        }
+
+        if(localStorage.getItem('intento-2')){
+            getNumberIntentos.textContent = "Se acabaron todos los intentos, vuelva más tarde";
+            localStorage.setItem('finish', 'finish');
+        }        
+
+        localStorage.setItem('intento-1', 'intento-1');
         
     }
 
 });
 
 
-
+if(localStorage.getItem('finish')){
+    document.querySelector('.questions').remove();
+}
